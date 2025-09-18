@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClasesEntregable", "ClasesEntregable.csproj", "{3CA66793-7BC8-48F9-95C5-9EB5D02FC965}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEntregable", "..\FrontEntregable\FrontEntregable.csproj", "{722873DE-0406-406A-B07E-06A6657BF736}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CA66793-7BC8-48F9-95C5-9EB5D02FC965}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CA66793-7BC8-48F9-95C5-9EB5D02FC965}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CA66793-7BC8-48F9-95C5-9EB5D02FC965}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CA66793-7BC8-48F9-95C5-9EB5D02FC965}.Release|Any CPU.Build.0 = Release|Any CPU
+		{722873DE-0406-406A-B07E-06A6657BF736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{722873DE-0406-406A-B07E-06A6657BF736}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{722873DE-0406-406A-B07E-06A6657BF736}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{722873DE-0406-406A-B07E-06A6657BF736}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC3CF8E1-764C-46F9-8874-56F1437FB22A}
+	EndGlobalSection
+EndGlobal

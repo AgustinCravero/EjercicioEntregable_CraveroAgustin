@@ -1,0 +1,15 @@
+C:\Agustín Cravero - Desarrollo de Software\Programacion1\EjercicioEntregable_CraveroAgustin\ClasesEntregable\bin\Debug\net8.0\ClasesEntregable.deps.json
+C:\Agustín Cravero - Desarrollo de Software\Programacion1\EjercicioEntregable_CraveroAgustin\ClasesEntregable\bin\Debug\net8.0\ClasesEntregable.runtimeconfig.json
+C:\Agustín Cravero - Desarrollo de Software\Programacion1\EjercicioEntregable_CraveroAgustin\ClasesEntregable\bin\Debug\net8.0\ClasesEntregable.dll
+C:\Agustín Cravero - Desarrollo de Software\Programacion1\EjercicioEntregable_CraveroAgustin\ClasesEntregable\bin\Debug\net8.0\ClasesEntregable.pdb
+C:\Agustín Cravero - Desarrollo de Software\Programacion1\EjercicioEntregable_CraveroAgustin\ClasesEntregable\obj\Debug\net8.0\ClasesEntregable.csproj.AssemblyReference.cache
+C:\Agustín Cravero - Desarrollo de Software\Programacion1\EjercicioEntregable_CraveroAgustin\ClasesEntregable\obj\Debug\net8.0\ClasesEntregable.GeneratedMSBuildEditorConfig.editorconfig
+C:\Agustín Cravero - Desarrollo de Software\Programacion1\EjercicioEntregable_CraveroAgustin\ClasesEntregable\obj\Debug\net8.0\ClasesEntregable.AssemblyInfoInputs.cache
+C:\Agustín Cravero - Desarrollo de Software\Programacion1\EjercicioEntregable_CraveroAgustin\ClasesEntregable\obj\Debug\net8.0\ClasesEntregable.AssemblyInfo.cs
+C:\Agustín Cravero - Desarrollo de Software\Programacion1\EjercicioEntregable_CraveroAgustin\ClasesEntregable\obj\Debug\net8.0\ClasesEntregable.csproj.CoreCompileInputs.cache
+C:\Agustín Cravero - Desarrollo de Software\Programacion1\EjercicioEntregable_CraveroAgustin\ClasesEntregable\obj\Debug\net8.0\ClasesEntregable.sourcelink.json
+C:\Agustín Cravero - Desarrollo de Software\Programacion1\EjercicioEntregable_CraveroAgustin\ClasesEntregable\obj\Debug\net8.0\ClasesEntregable.dll
+C:\Agustín Cravero - Desarrollo de Software\Programacion1\EjercicioEntregable_CraveroAgustin\ClasesEntregable\obj\Debug\net8.0\refint\ClasesEntregable.dll
+C:\Agustín Cravero - Desarrollo de Software\Programacion1\EjercicioEntregable_CraveroAgustin\ClasesEntregable\obj\Debug\net8.0\ClasesEntregable.pdb
+C:\Agustín Cravero - Desarrollo de Software\Programacion1\EjercicioEntregable_CraveroAgustin\ClasesEntregable\obj\Debug\net8.0\ClasesEntregable.genruntimeconfig.cache
+C:\Agustín Cravero - Desarrollo de Software\Programacion1\EjercicioEntregable_CraveroAgustin\ClasesEntregable\obj\Debug\net8.0\ref\ClasesEntregable.dll
