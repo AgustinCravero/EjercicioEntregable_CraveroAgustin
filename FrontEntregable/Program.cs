@@ -25,56 +25,61 @@ internal class Program
                 {
                     case "1":
                         Console.Clear();
-                    Console.Write("Nombre: ");
-                    var nombre = Console.ReadLine();
-                    Console.Write("Email: ");
-                    string email = Console.ReadLine();
-                    if (empleados.Exists(e => e.email == email))
-                    {
-                        Console.WriteLine("Ya existe un empleado con ese email.");
-                        break;
-                    }
-                    Console.Write("Salario: ");
-                    decimal salario = decimal.Parse(Console.ReadLine());
-                    Console.WriteLine("Los departamentos disponibles son:");
-                    foreach (var dept in departamentos)
-                    {
-                        Console.WriteLine($"Id: {dept.id}, Nombre: {dept.nombre}");
-                    }
-                    Console.Write("Departamento Id: ");
-                    int departamentoID = int.Parse(Console.ReadLine());
-                    if (!departamentos.Exists(d => d.id == departamentoID))
-                    {
-                        Console.WriteLine("No existe un departamento con ese Id.");
-                        break;
-                    }
-                    Empleado empleado = new Empleado() { nombre = nombre, email = email, salario = salario, DepartamentoId = departamentoID };
-                    empleados.Add(empleado);
-                    EmpleadoRepository.CargarEmpleado(empleado);
-                    Console.WriteLine("Empleado registrado.\n");
-                    Console.ReadKey(true);
+                        Console.WriteLine("Ingrese el nombre del empleado: ");
+                        string nombre = Console.ReadLine();
+                        Console.WriteLine("Email: ");
+                        string email = Console.ReadLine();
+                        if (empleados.Exists(e => e.email == email))
+                        {
+                            Console.WriteLine("El email ya esta registrado para un empleado");
+                            break;
+                        }
+                        Console.WriteLine("Ingrese el salario del empleado: ");
+                        decimal salario = decimal.Parse(Console.ReadLine());
+                        Console.WriteLine("Departamentos disponibles:");
+                        foreach (var dept in departamentos)
+                        {
+                            Console.WriteLine($"Id: {dept.id}, Nombre: {dept.nombre}");
+                        }
+                        Console.WriteLine("Ingrese el Id del departamento: ");
+                        int departamentoID = int.Parse(Console.ReadLine());
+                        if (!departamentos.Exists(d => d.id == departamentoID))
+                        {
+                            Console.WriteLine("El Id ingresado no existe.");
+                            break;
+                        }
+                        Empleado empleado = new Empleado() 
+                        {   
+                            nombre = nombre, 
+                            email = email, 
+                            salario = salario, 
+                            DepartamentoId = departamentoID 
+                        };
+                        empleados.Add(empleado);
+                        EmpleadoRepository.CargarEmpleado(empleado);
+                        Console.WriteLine("Empleado registrado.");
+                        Console.ReadKey(true);
                         break;
                     case "2":
                         Console.Clear();
-                        Console.WriteLine("Actualizar salario empleado");
                         Console.Write("Ingrese el email del empleado: ");
-                        string emailActualizar = Console.ReadLine();
-                        Empleado empleadoActualizar = empleados.FirstOrDefault(e => e.email == emailActualizar);
-                        if (empleadoActualizar == null)
+                        string emailActSalario = Console.ReadLine();
+                        Empleado empleadoActSalario = empleados.FirstOrDefault(e => e.email == emailActSalario);
+                        if (empleadoActSalario == null)
                         {
                             Console.WriteLine("Empleado no encontrado.");
                         }
                         else
                         {
-                            Console.Write("Nuevo salario: ");
-                            empleadoActualizar.salario = decimal.Parse(Console.ReadLine());
+                            Console.WriteLine("Ingrese el nuevo salario: ");
+                            empleadoActSalario.salario = decimal.Parse(Console.ReadLine());
                             Console.WriteLine("Salario actualizado.");
                         }
                         Console.ReadKey(true);
                         break;
                     case "3":
                         Console.Clear();
-                        Console.Write("Ingrese el email del empleado a eliminar: ");
+                        Console.WriteLine("Ingrese el email del empleado que desea eliminar: ");
                         string emailEliminar = Console.ReadLine();
                         Empleado empleadoEliminar = empleados.FirstOrDefault(e => e.email == emailEliminar);
                         if (empleadoEliminar == null)
@@ -91,11 +96,11 @@ internal class Program
                     case "4":
                         Console.Clear();
                         Console.WriteLine("Registrar nuevo departamento");
-                        Console.Write("Nombre del departamento: ");
-                        string nombreDept = Console.ReadLine();
-                        Console.Write("Descripción del departamento: ");
-                        string descripcionDept = Console.ReadLine();
-                        Departamento departamento = new Departamento() { nombre = nombreDept, descripcion = descripcionDept };
+                        Console.WriteLine("Ingrese el nombre del departamento: ");
+                        string nombreDepartamento = Console.ReadLine();
+                        Console.WriteLine("Ingrese la descripción del departamento: ");
+                        string descripcionDepartamento = Console.ReadLine();
+                        Departamento departamento = new Departamento() { nombre = nombreDepartamento, descripcion = descripcionDepartamento };
                         departamentos.Add(departamento);
                         DepartamentoRepository.CargarDepartamento(departamento);
                         Console.ReadKey(true);
@@ -106,7 +111,7 @@ internal class Program
                         int totalEmpleados = empleados.Count;
                         if (totalEmpleados == 0)
                         {
-                            Console.WriteLine("No hay empleados registrados.");
+                            Console.WriteLine("No hay empleados registrados por el momento.");
                             break;
                         }
                         else
@@ -114,10 +119,10 @@ internal class Program
                             decimal salarioPromedio = empleados.Average(e => e.salario);
                             Console.WriteLine($"Total de empleados: {totalEmpleados}");
                             Console.WriteLine($"Salario promedio: {salarioPromedio}");
-                            Console.ReadKey();
+                            Console.ReadKey(true);
                             break;
                         }
-                case "6":
+                    case "6":
                         break;
                     default:
                         Console.WriteLine("Opción inválida");
