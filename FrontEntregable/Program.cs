@@ -26,16 +26,16 @@ internal class Program
                     case "1":
                         Console.Clear();
                         Console.WriteLine("Ingrese el nombre del empleado: ");
-                        string nombre = Console.ReadLine();
-                        Console.WriteLine("Email: ");
-                        string email = Console.ReadLine();
-                        if (empleados.Exists(e => e.email == email))
+                        string nombreEmpleado = Console.ReadLine();
+                        Console.WriteLine("Ingrese el email del empleado: ");
+                        string emailEmpleado = Console.ReadLine();
+                        if (empleados.Exists(e => e.email == emailEmpleado))
                         {
                             Console.WriteLine("El email ya esta registrado para un empleado");
                             break;
                         }
                         Console.WriteLine("Ingrese el salario del empleado: ");
-                        decimal salario = decimal.Parse(Console.ReadLine());
+                        decimal salarioEmpleado = decimal.Parse(Console.ReadLine());
                         Console.WriteLine("Departamentos disponibles:");
                         foreach (var dept in departamentos)
                         {
@@ -50,9 +50,9 @@ internal class Program
                         }
                         Empleado empleado = new Empleado() 
                         {   
-                            nombre = nombre, 
-                            email = email, 
-                            salario = salario, 
+                            nombre = nombreEmpleado, 
+                            email = emailEmpleado, 
+                            salario = salarioEmpleado, 
                             DepartamentoId = departamentoID 
                         };
                         empleados.Add(empleado);
@@ -62,7 +62,7 @@ internal class Program
                         break;
                     case "2":
                         Console.Clear();
-                        Console.Write("Ingrese el email del empleado: ");
+                        Console.Write("Ingrese el email del empleado al que le quiere actualizar el salario: ");
                         string emailActSalario = Console.ReadLine();
                         Empleado empleadoActSalario = empleados.FirstOrDefault(e => e.email == emailActSalario);
                         if (empleadoActSalario == null)
@@ -72,7 +72,9 @@ internal class Program
                         else
                         {
                             Console.WriteLine("Ingrese el nuevo salario: ");
-                            empleadoActSalario.salario = decimal.Parse(Console.ReadLine());
+                            decimal salarioAct = decimal.Parse(Console.ReadLine());
+                            empleadoActSalario.salario = salarioAct;
+                            EmpleadoRepository.ActualizarSalario(empleadoActSalario, salarioAct);
                             Console.WriteLine("Salario actualizado.");
                         }
                         Console.ReadKey(true);
@@ -89,6 +91,7 @@ internal class Program
                         else
                         {
                             empleados.Remove(empleadoEliminar);
+                            EmpleadoRepository.EliminarEmpleado(empleadoEliminar);
                             Console.WriteLine("Empleado eliminado.");
                         }
                         Console.ReadKey(true);
@@ -98,16 +101,27 @@ internal class Program
                         Console.WriteLine("Registrar nuevo departamento");
                         Console.WriteLine("Ingrese el nombre del departamento: ");
                         string nombreDepartamento = Console.ReadLine();
-                        Console.WriteLine("Ingrese la descripción del departamento: ");
-                        string descripcionDepartamento = Console.ReadLine();
-                        Departamento departamento = new Departamento() { nombre = nombreDepartamento, descripcion = descripcionDepartamento };
-                        departamentos.Add(departamento);
-                        DepartamentoRepository.CargarDepartamento(departamento);
+                        if (departamentos.Exists(d => d.nombre == nombreDepartamento))
+                        {
+                            Console.WriteLine("El departamento ya está registrado.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Ingrese la descripción del departamento: ");
+                            string descripcionDepartamento = Console.ReadLine();
+                            Departamento departamento = new Departamento() 
+                            { 
+                                nombre = nombreDepartamento, 
+                                descripcion = descripcionDepartamento 
+                            };
+                            departamentos.Add(departamento);
+                            DepartamentoRepository.CargarDepartamento(departamento);
+                            Console.WriteLine("Departamento registrado.");
+                        }
                         Console.ReadKey(true);
                         break;
                     case "5":
                         Console.Clear();
-                        Console.WriteLine("Estadísticas de empleados");
                         int totalEmpleados = empleados.Count;
                         if (totalEmpleados == 0)
                         {
@@ -116,9 +130,22 @@ internal class Program
                         }
                         else
                         {
+                            Console.WriteLine("Estadísticas de empleados");
                             decimal salarioPromedio = empleados.Average(e => e.salario);
+                            decimal salarioMaximo = empleados.Max(e => e.salario);
+                            decimal salarioMinimo = empleados.Min(e => e.salario);
+                            var cantPorDpto = empleados 
+                                .GroupBy(e => e.Departamento != null ? e.Departamento.nombre : "Sin departamento")
+                                .Select(g => new { Departamento = g.Key, Cantidad = g.Count() });
                             Console.WriteLine($"Total de empleados: {totalEmpleados}");
                             Console.WriteLine($"Salario promedio: {salarioPromedio}");
+                            Console.WriteLine($"Salario máximo: {salarioMaximo}");
+                            Console.WriteLine($"Salario mínimo: {salarioMinimo}");
+                            Console.WriteLine ("Cantidad de empleados por departamento:");
+                            foreach (var i in cantPorDpto)
+                            {
+                                Console.WriteLine($"Departamento: {i.Departamento}, Cantidad de empleados: {i.Cantidad}");
+                            }
                             Console.ReadKey(true);
                             break;
                         }

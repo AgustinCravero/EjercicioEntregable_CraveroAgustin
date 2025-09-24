@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FrontEntregable")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+068cb99026c8171e5226c85c7cfe3fb0a6f17857")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d0e01bfdf42a64880feca0546171755e32ab09e")]
 [assembly: System.Reflection.AssemblyProductAttribute("FrontEntregable")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FrontEntregable")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
